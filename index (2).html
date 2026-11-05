@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050914">
+
+<title>Privacy Policy | Tower House Builder</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #050914;
+    --blue: #42a5ff;
+    --light: #dceaff;
+    --muted: #a9b8cf;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* CURSOR LIGHT */
+
+.cursor-light {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(
+        circle,
+        rgba(35, 135, 255, 0.13),
+        transparent 70%
+    );
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* HEADER */
+
+.top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    min-height: 65px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.97);
+    border-bottom: 1px solid rgba(66,165,255,0.3);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.brand {
+    justify-self: start;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+}
+
+.ram-text {
+    justify-self: center;
+    color: #63b5ff;
+    font-size: 21px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-shadow: 0 0 12px rgba(66,165,255,0.7);
+    animation: ramGlow 2s infinite alternate;
+}
+
+@keyframes ramGlow {
+    from {
+        text-shadow: 0 0 5px #168cff;
+    }
+    to {
+        text-shadow: 0 0 18px #168cff,
+                     0 0 28px #168cff;
+    }
+}
+
+.close-btn {
+    justify-self: end;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #55adff;
+    background: #101d32;
+    color: white;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: #168cff;
+    transform: rotate(90deg);
+    box-shadow: 0 0 18px #168cff;
+}
+
+/* MAIN CONTENT */
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 92%);
+    margin: 45px auto 90px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 35px;
+    animation: fadeDown 0.8s ease;
+}
+
+.heading h1 {
+    color: #ffffff;
+    font-size: clamp(28px, 5vw, 42px);
+    margin-bottom: 12px;
+    text-shadow: 0 0 18px rgba(40,140,255,0.45);
+}
+
+.heading p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.policy-card {
+    background: linear-gradient(145deg, #101d33, #0b1425);
+    border: 1px solid rgba(90,160,255,0.17);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        border-color 0.3s ease;
+}
+
+.policy-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.policy-card:hover {
+    border-color: rgba(66,165,255,0.55);
+}
+
+.policy-card h2 {
+    font-size: 19px;
+    color: #65b6ff;
+    margin-bottom: 14px;
+}
+
+.policy-card p,
+.policy-card li {
+    color: #c1cde0;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.policy-card ul {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.policy-card a {
+    color: #69baff;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.policy-card a:hover {
+    text-decoration: underline;
+}
+
+.contact-line {
+    margin: 10px 0;
+    overflow-wrap: anywhere;
+}
+
+.contact-label {
+    color: white;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 20px 12px;
+    text-align: center;
+    background: #000000;
+    border-top: 1px solid rgba(66,165,255,0.3);
+    color: #c8d8ec;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+}
+
+footer .heart {
+    color: #ff5b79;
+    display: inline-block;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE HEADER - EXACT CENTER RAM */
+
+@media (max-width: 600px) {
+
+    .top-bar {
+        position: sticky;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 12px;
+        min-height: 58px;
+        gap: 10px;
+    }
+
+    .brand {
+        flex: 1;
+        min-width: 0;
+        font-size: 9px;
+        letter-spacing: 0.2px;
+        line-height: 1.3;
+        white-space: normal;
+        overflow-wrap: normal;
+    }
+
+    .ram-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    .close-btn {
+        position: relative;
+        z-index: 2;
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        font-size: 21px;
+    }
+
+    .container {
+        width: 92%;
+        margin-top: 30px;
+    }
+
+    .policy-card {
+        padding: 19px;
+        border-radius: 13px;
+    }
+
+    .policy-card h2 {
+        font-size: 17px;
+    }
+
+    .policy-card p,
+    .policy-card li {
+        font-size: 13px;
+    }
+
+    footer {
+        font-size: 11px;
+        padding: 18px 8px;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 360px) {
+
+    .top-bar {
+        padding-left: 9px;
+        padding-right: 9px;
+        gap: 8px;
+    }
+
+    .brand {
+        font-size: 8px;
+        max-width: 105px;
+    }
+
+    .ram-text {
+        font-size: 13px;
+    }
+
+    .close-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cursor-light" id="cursorLight"></div>
+
+<!-- HEADER -->
+
+<header class="top-bar">
+
+    <div class="brand">
+        TOWER HOUSE BUILDER
+    </div>
+
+    <div class="ram-text">
+        || राम ||
+    </div>
+
+    <button
+        class="close-btn"
+        onclick="closePolicy()"
+        aria-label="Close Privacy Policy">
+        ×
+    </button>
+
+</header>
+
+<!-- CONTENT -->
+
+<main class="container">
+
+    <div class="heading">
+
+        <h1>Privacy Policy</h1>
+
+        <p>
+            Your privacy matters to us. Please read how Tower House Builder
+            handles information while you enjoy the game.
+        </p>
+
+        <p style="color:#75bfff; font-weight:bold; margin-top:10px;">
+            Last Updated: <span id="lastUpdated"></span>
+        </p>
+
+    </div>
+
+    <section class="policy-card">
+        <h2>1. Introduction</h2>
+        <p>
+            Welcome to Tower House Builder. This Privacy Policy explains
+            how information may be handled when you use our mobile game.
+            By using the game, you acknowledge this policy.
+        </p>
+    </section>
+
+    <section class="policy-card">
+        <h2>2. Information We May Collect</h2>
+        <p>
+            Depending on the features and services used, certain information
+            may be processed automatically, such as device information,
+            advertising identifiers, app interaction information,
+            diagnostics and performance data.
+        </p>
+        <p>
+            We do not ask players to provide personal information directly
+            simply to play the basic game.
+        </p>
+    </section>
+
+    <section class="policy-card">
+        <h2>3. Advertising and Third-Party Services</h2>
+        <p>
+            Tower House Builder may use third-party advertising services,
+            including Google AdMob, to display advertisements such as
+            rewarded or interstitial ads.
+        </p>
+        <p>
+            These services may process information such as advertising
+            identifiers, device information and ad interaction data
+            according to their own privacy policies.
+        </p>
+        <p>
+            Learn more:
+            <a href="https://policies.google.com/privacy"
+               target="_blank"
+               rel="noopener noreferrer">
+                Google Privacy Policy
+            </a>.
+        </p>
+    </section>
+
+    <section class="policy-card">
+        <h2>4. How Information May Be Used</h2>
+        <ul>
+            <li>To operate and maintain the game.</li>
+            <li>To improve gameplay and user experience.</li>
+            <li>To understand technical errors and performance issues.</li>
+            <li>To display and measure advertisements.</li>
+            <li>To protect the game and its services.</li>
+        </ul>
+    </section>
+
+    <section class="policy-card">
+        <h2>5. Data Storage and Security</h2>
+        <p>
+            We take reasonable steps to protect information associated
+            with the game. However, no electronic storage or transmission
+            method can be guaranteed to be completely secure.
+        </p>
+    </section>
+
+    <section class="policy-card">
+        <h2>6. Third-Party Links and Services</h2>
+        <p>
+            The game may contain links to third-party websites or services.
+            Those services operate under their own privacy policies.
+            We encourage you to review their policies before using them.
+        </p>
+    </section>
+
+    <section class="policy-card">
+        <h2>7. Children's Privacy</h2>
+        <p>
+            The game is not intended to knowingly collect personal
+            information directly from children. If you believe that
+            personal information has been provided to us inappropriately,
+            please contact us using the details below.
+        </p>
+    </section>
+
+    <section class="policy-card">
+        <h2>8. Your Privacy Choices</h2>
+        <p>
+            You may have options to manage advertising preferences
+            through your device settings. You can also review Google's
+            privacy information to understand available controls.
+        </p>
+    </section>
+
+    <section class="policy-card">
+        <h2>9. Data Retention</h2>
+        <p>
+            Information handled by third-party services may be retained
+            according to their own policies and retention practices.
+            We do not intend to retain personal information longer
+            than reasonably necessary for the purposes described here.
+        </p>
+    </section>
+
+    <section class="policy-card">
+        <h2>10. Changes to This Privacy Policy</h2>
+        <p>
+            We may update this Privacy Policy when the game, its features
+            or applicable requirements change. Updated versions will
+            be published on this page with a revised update date.
+        </p>
+    </section>
+
+    <section class="policy-card">
+
+        <h2>11. Developer and Grievance Contact</h2>
+
+        <p class="contact-line">
+            <span class="contact-label">Developer Name:</span>
+            <span id="developerName"></span>
+        </p>
+
+        <p class="contact-line">
+            <span class="contact-label">Developer Email:</span>
+            <a id="developerEmail"></a>
+        </p>
+
+        <p class="contact-line">
+            <span class="contact-label">Grievance Email:</span>
+            <a id="grievanceEmail"></a>
+        </p>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+    Built with <span class="heart">❤️</span> by Tomarji Game's Cares
+</footer>
+
+<script>
+
+/* EDIT CONTACT DETAILS HERE */
+
+const POLICY = {
+    developerName: "TOMAR JI",
+    developerEmail: "tomarji1904@gmail.com",
+    grievanceEmail: "tomarji1904@gamil.com"
+};
+
+/* CONTACT DETAILS */
+
+document.getElementById("developerName").textContent =
+    POLICY.developerName;
+
+function setEmail(elementId, email) {
+
+    const element = document.getElementById(elementId);
+
+    element.textContent = email;
+
+    if (email && email.includes("@")) {
+        element.href = "mailto:" + email;
+    }
+}
+
+setEmail("developerEmail", POLICY.developerEmail);
+setEmail("grievanceEmail", POLICY.grievanceEmail);
+
+/* DATE */
+
+document.getElementById("lastUpdated").textContent =
+    new Date().toLocaleDateString("en-IN", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+
+/* SCROLL ANIMATION */
+
+const cards = document.querySelectorAll(".policy-card");
+
+if ("IntersectionObserver" in window) {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
+            }
+        });
+
+    }, {
+        threshold: 0.08
+    });
+
+    cards.forEach(card => observer.observe(card));
+
+} else {
+
+    cards.forEach(card => card.classList.add("visible"));
+}
+
+/* MOUSE AND TOUCH LIGHT */
+
+const light = document.getElementById("cursorLight");
+
+function moveLight(x, y) {
+    light.style.left = x + "px";
+    light.style.top = y + "px";
+}
+
+document.addEventListener("mousemove", (event) => {
+    moveLight(event.clientX, event.clientY);
+});
+
+document.addEventListener("touchmove", (event) => {
+
+    if (event.touches.length > 0) {
+
+        moveLight(
+            event.touches[0].clientX,
+            event.touches[0].clientY
+        );
+    }
+
+}, {
+    passive: true
+});
+
+/* CLOSE PRIVACY POLICY */
+
+function closePolicy() {
+
+    if (
+        window.Android &&
+        typeof window.Android.closePrivacyPolicy === "function"
+    ) {
+
+        window.Android.closePrivacyPolicy();
+        return;
+    }
+
+    if (window.history.length > 1) {
+
+        window.history.back();
+        return;
+    }
+
+    alert("Please use your device's Back button to return to the game.");
+}
+
+</script>
+
+</body>
+</html>
