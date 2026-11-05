@@ -1,106 +1,501 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b14">
-<title>Tower House Builder | Terms & Privacy Policy</title>
-<style>
-:root{--bg:#080b14;--panel:#111827;--panel2:#151f31;--gold:#f5c76a;--text:#edf2fb;--muted:#aab5c8;--line:rgba(255,255,255,.1);--blue:#75b9ff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0%,#1b2942 0,transparent 34%),radial-gradient(circle at 90% 30%,#25203b 0,transparent 28%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7;min-height:100vh}
-.topbar{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:13px clamp(14px,4vw,42px);background:rgba(5,8,15,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.brand{font-weight:800;letter-spacing:1.1px;font-size:clamp(11px,2vw,15px);color:#fff}.ram{font-size:clamp(18px,3vw,24px);font-weight:800;color:var(--gold);letter-spacing:2px;text-align:center;white-space:nowrap;text-shadow:0 0 18px #f5c76a55}.close{justify-self:end;width:39px;height:39px;border-radius:50%;border:1px solid #f5c76a88;background:linear-gradient(145deg,#202b40,#0e1421);color:#fff;font-size:24px;line-height:1;cursor:pointer;transition:.25s}.close:hover{transform:rotate(90deg);background:#f5c76a;color:#111;box-shadow:0 0 22px #f5c76a66}
-main{width:min(940px,calc(100% - 28px));margin:34px auto 55px}.hero{text-align:center;padding:38px 20px 30px;animation:rise .7s ease both}.eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:700;text-transform:uppercase}.hero h1{font-size:clamp(29px,5vw,48px);line-height:1.15;margin:12px 0;color:#fff}.hero p{max-width:680px;margin:0 auto;color:var(--muted)}.updated{display:inline-block;margin-top:18px;padding:6px 13px;border:1px solid var(--line);border-radius:30px;color:var(--muted);font-size:12px}
-.nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 0 24px}.nav a{color:var(--text);text-decoration:none;border:1px solid var(--line);background:#ffffff08;padding:9px 16px;border-radius:30px;font-size:13px;transition:.2s}.nav a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-.card{background:linear-gradient(145deg,rgba(21,31,49,.96),rgba(13,19,31,.96));border:1px solid var(--line);border-radius:20px;padding:clamp(20px,4vw,34px);margin:18px 0;box-shadow:0 18px 45px #0003;animation:rise .65s ease both}.card h2{font-size:clamp(21px,3vw,28px);margin:0 0 15px;color:var(--gold);display:flex;align-items:center;gap:10px}.card h3{font-size:16px;color:#fff;margin:23px 0 7px}.card p,.card li{color:#c4cede;font-size:14px}.card p{margin:9px 0}.card ul{padding-left:21px}.card li{padding:3px 0}.notice{border-left:3px solid var(--gold);background:#f5c76a12;padding:13px 15px;border-radius:0 10px 10px 0;color:#e9d7ad;font-size:13px;margin:16px 0}.contact{display:grid;gap:9px;margin-top:14px}.contact div{padding:12px 14px;background:#ffffff08;border:1px solid var(--line);border-radius:10px;color:#dce5f3;font-size:14px;overflow-wrap:anywhere}.contact strong{color:var(--gold)}.contact a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}.contact a:hover{color:var(--gold)}
-footer{text-align:center;padding:22px 14px 30px;color:#9ca9bd;border-top:1px solid var(--line);font-size:13px}footer strong{color:var(--gold)}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:480px){.topbar{padding:10px 12px;gap:5px}.brand{letter-spacing:.4px;font-size:10px}.ram{letter-spacing:1px}.close{width:35px;height:35px;font-size:21px}main{margin-top:18px}.hero{padding:28px 8px 22px}.card{border-radius:15px}}
-</style>
-</head>
-<body>
-<header class="topbar">
-  <div class="brand">TOWER HOUSE BUILDER</div>
-  <div class="ram">|| राम ||</div>
-  <button class="close" type="button" aria-label="Close and return to game" onclick="goBack()">×</button>
-</header>
-<main>
-  <section class="hero">
-    <div class="eyebrow">A clear and fair game experience</div>
-    <h1>Terms of Use &amp;<br>Privacy Policy</h1>
-    <p>Please read these terms to understand the rules for using Tower House Builder and how information may be handled when you play the game.</p>
-    <span class="updated">Last updated: 5 November 2026</span>
-  </section>
-  <nav class="nav" aria-label="Policy navigation">
-    <a href="#terms">Terms of Use</a><a href="#privacy">Privacy Policy</a><a href="#contact">Contact</a>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#080b14" />
+    <title>Tower House Builder | Terms & Privacy Policy</title>
+    <style>
+      :root {
+        --bg: #080b14;
+        --panel: #111827;
+        --panel2: #151f31;
+        --gold: #f5c76a;
+        --text: #edf2fb;
+        --muted: #aab5c8;
+        --line: rgba(255, 255, 255, 0.1);
+        --blue: #75b9ff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 15% 0%, #1b2942 0, transparent 34%),
+          radial-gradient(circle at 90% 30%, #25203b 0, transparent 28%),
+          var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.7;
+        min-height: 100vh;
+      }
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: center;
+        gap: 10px;
+        padding: calc(26px + env(safe-area-inset-top, 0px))
+          clamp(14px, 4vw, 42px) 13px;
+        background: rgba(5, 8, 15, 0.9);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        font-weight: 800;
+        letter-spacing: 1.1px;
+        font-size: clamp(11px, 2vw, 15px);
+        color: #fff;
+      }
+      .ram {
+        font-size: clamp(18px, 3vw, 24px);
+        font-weight: 800;
+        color: var(--gold);
+        letter-spacing: 2px;
+        text-align: center;
+        white-space: nowrap;
+        text-shadow: 0 0 18px #f5c76a55;
+      }
+      .close {
+        justify-self: end;
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        border: 1px solid #f5c76a88;
+        background: linear-gradient(145deg, #202b40, #0e1421);
+        color: #fff;
+        font-size: 24px;
+        line-height: 1;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+      .close:hover {
+        transform: rotate(90deg);
+        background: #f5c76a;
+        color: #111;
+        box-shadow: 0 0 22px #f5c76a66;
+      }
+      main {
+        width: min(940px, calc(100% - 28px));
+        margin: 34px auto 55px;
+      }
+      .hero {
+        text-align: center;
+        padding: 38px 20px 30px;
+        animation: rise 0.7s ease both;
+      }
+      .eyebrow {
+        color: var(--gold);
+        font-size: 12px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font-size: clamp(29px, 5vw, 48px);
+        line-height: 1.15;
+        margin: 12px 0;
+        color: #fff;
+      }
+      .hero p {
+        max-width: 680px;
+        margin: 0 auto;
+        color: var(--muted);
+      }
+      .updated {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 6px 13px;
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .nav {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 0 0 24px;
+      }
+      .nav a {
+        color: var(--text);
+        text-decoration: none;
+        border: 1px solid var(--line);
+        background: #ffffff08;
+        padding: 9px 16px;
+        border-radius: 30px;
+        font-size: 13px;
+        transition: 0.2s;
+      }
+      .nav a:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+      .card {
+        background: linear-gradient(
+          145deg,
+          rgba(21, 31, 49, 0.96),
+          rgba(13, 19, 31, 0.96)
+        );
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(20px, 4vw, 34px);
+        margin: 18px 0;
+        box-shadow: 0 18px 45px #0003;
+        animation: rise 0.65s ease both;
+      }
+      .card h2 {
+        font-size: clamp(21px, 3vw, 28px);
+        margin: 0 0 15px;
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .card h3 {
+        font-size: 16px;
+        color: #fff;
+        margin: 23px 0 7px;
+      }
+      .card p,
+      .card li {
+        color: #c4cede;
+        font-size: 14px;
+      }
+      .card p {
+        margin: 9px 0;
+      }
+      .card ul {
+        padding-left: 21px;
+      }
+      .card li {
+        padding: 3px 0;
+      }
+      .notice {
+        border-left: 3px solid var(--gold);
+        background: #f5c76a12;
+        padding: 13px 15px;
+        border-radius: 0 10px 10px 0;
+        color: #e9d7ad;
+        font-size: 13px;
+        margin: 16px 0;
+      }
+      .contact {
+        display: grid;
+        gap: 9px;
+        margin-top: 14px;
+      }
+      .contact div {
+        padding: 12px 14px;
+        background: #ffffff08;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        color: #dce5f3;
+        font-size: 14px;
+        overflow-wrap: anywhere;
+      }
+      .contact strong {
+        color: var(--gold);
+      }
+      .contact a {
+        color: var(--blue);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .contact a:hover {
+        color: var(--gold);
+      }
+      footer {
+        text-align: center;
+        padding: 22px 14px 30px;
+        color: #9ca9bd;
+        border-top: 1px solid var(--line);
+        font-size: 13px;
+      }
+      footer strong {
+        color: var(--gold);
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 480px) {
+        .topbar {
+          padding: calc(26px + env(safe-area-inset-top, 0px)) 12px 10px;
+          gap: 5px;
+        }
+        .brand {
+          letter-spacing: 0.4px;
+          font-size: 10px;
+        }
+        .ram {
+          letter-spacing: 1px;
+        }
+        .close {
+          width: 35px;
+          height: 35px;
+          font-size: 21px;
+        }
+        main {
+          margin-top: 18px;
+        }
+        .hero {
+          padding: 28px 8px 22px;
+        }
+        .card {
+          border-radius: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">TOWER HOUSE BUILDER</div>
+      <div class="ram">|| राम ||</div>
+      <button
+        class="close"
+        type="button"
+        aria-label="Close and return to game"
+        onclick="goBack()"
+      >
+        ×
+      </button>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">A clear and fair game experience</div>
+        <h1>Terms of Use &amp;<br />Privacy Policy</h1>
+        <span class="updated">Last updated: 5 November 2026</span>
+      </section>
+      <nav class="nav" aria-label="Policy navigation">
+        <a href="#terms">Terms of Use</a><a href="#privacy">Privacy Policy</a
+        ><a href="#contact">Contact</a>
+      </nav>
 
-  <section class="card" id="terms">
-    <h2>📜 Terms of Use</h2>
-    <p>Welcome to <strong>Tower House Builder</strong>. By downloading, opening, or using this game, you agree to these Terms of Use. If you do not agree, please stop using the game.</p>
-    <h3>1. Use of the Game</h3>
-    <p>You may use the game for personal, non-commercial entertainment. You agree not to misuse the game, interfere with its operation, attempt to access its systems without permission, or use it for unlawful purposes.</p>
-    <h3>2. Game Content and Ownership</h3>
-    <p>The game name, design, artwork, interface, audio, and other content are owned by or licensed to the developer, unless otherwise stated. You may not copy, modify, redistribute, sell, or commercially exploit the game or its content without prior written permission.</p>
-    <h3>3. Advertisements</h3>
-    <p>The game may display advertisements, including ads provided by third-party advertising partners such as Google AdMob. Ad availability and content may vary. Interactions with third-party advertisements are subject to the relevant third party's terms and policies.</p>
-    <h3>4. Virtual Features and Future Services</h3>
-    <p>Some features may be marked “Coming Soon” and may not currently be available. The developer may add, change, pause, or remove game features in future updates. Do not treat an unavailable or promotional feature as a confirmed purchase or service.</p>
-    <h3>5. Updates and Availability</h3>
-    <p>The game may be updated to improve performance, fix issues, or add features. We do not guarantee uninterrupted availability or compatibility with every device or operating-system version.</p>
-    <h3>6. Disclaimer</h3>
-    <p>The game is provided on an “as is” and “as available” basis, to the extent permitted by applicable law. We do not guarantee that the game will always be error-free, uninterrupted, or available on every device.</p>
-    <h3>7. Limitation of Liability</h3>
-    <p>To the extent permitted by applicable law, the developer will not be liable for indirect, incidental, special, or consequential losses arising from use of, or inability to use, the game. Nothing in these terms excludes liability that cannot legally be excluded.</p>
-    <h3>8. Changes to These Terms</h3>
-    <p>These terms may be revised when the game or applicable requirements change. The latest version will be published on this page. Continued use after an update means you accept the revised terms, where permitted by law.</p>
-    <h3>9. Governing Law</h3>
-    <p>These terms are subject to the applicable laws of India, without limiting any mandatory rights or protections available to users under applicable law.</p>
-  </section>
+      <section class="card" id="terms">
+        <h2>📜 Terms of Use</h2>
+        <p>
+          Welcome to <strong>Tower House Builder</strong>. By downloading,
+          opening, or using this game, you agree to these Terms of Use. If you
+          do not agree, please stop using the game.
+        </p>
+        <h3>1. Use of the Game</h3>
+        <p>
+          You may use the game for personal, non-commercial entertainment. You
+          agree not to misuse the game, interfere with its operation, attempt to
+          access its systems without permission, or use it for unlawful
+          purposes.
+        </p>
+        <h3>2. Game Content and Ownership</h3>
+        <p>
+          The game name, design, artwork, interface, audio, and other content
+          are owned by or licensed to the developer, unless otherwise stated.
+          You may not copy, modify, redistribute, sell, or commercially exploit
+          the game or its content without prior written permission.
+        </p>
+        <h3>3. Advertisements</h3>
+        <p>
+          The game may display advertisements, including ads provided by
+          third-party advertising partners such as Google AdMob. Ad availability
+          and content may vary. Interactions with third-party advertisements are
+          subject to the relevant third party's terms and policies.
+        </p>
+        <h3>4. Virtual Features and Future Services</h3>
+        <p>
+          Some features may be marked “Coming Soon” and may not currently be
+          available. The developer may add, change, pause, or remove game
+          features in future updates. Do not treat an unavailable or promotional
+          feature as a confirmed purchase or service.
+        </p>
+        <h3>5. Updates and Availability</h3>
+        <p>
+          The game may be updated to improve performance, fix issues, or add
+          features. We do not guarantee uninterrupted availability or
+          compatibility with every device or operating-system version.
+        </p>
+        <h3>6. Disclaimer</h3>
+        <p>
+          The game is provided on an “as is” and “as available” basis, to the
+          extent permitted by applicable law. We do not guarantee that the game
+          will always be error-free, uninterrupted, or available on every
+          device.
+        </p>
+        <h3>7. Limitation of Liability</h3>
+        <p>
+          To the extent permitted by applicable law, the developer will not be
+          liable for indirect, incidental, special, or consequential losses
+          arising from use of, or inability to use, the game. Nothing in these
+          terms excludes liability that cannot legally be excluded.
+        </p>
+        <h3>8. Changes to These Terms</h3>
+        <p>
+          These terms may be revised when the game or applicable requirements
+          change. The latest version will be published on this page. Continued
+          use after an update means you accept the revised terms, where
+          permitted by law.
+        </p>
+        <h3>9. Governing Law</h3>
+        <p>
+          These terms are subject to the applicable laws of India, without
+          limiting any mandatory rights or protections available to users under
+          applicable law.
+        </p>
+      </section>
 
-  <section class="card" id="privacy">
-    <h2>🔒 Privacy Policy</h2>
-    <p>This Privacy Policy explains how <strong>Tower House Builder</strong> may collect, use, and share information when you use the game. Please customize this policy so it accurately reflects the data practices and SDKs in your released app.</p>
-    <h3>1. Information We Collect</h3>
-    <p>The game may process limited information needed to operate, maintain, secure, and improve the game. Depending on the features and services enabled in your version, this may include device information, app version, diagnostic data, gameplay-related information, and advertising identifiers or related information processed by advertising partners.</p>
-    <p>We do not ask you to provide sensitive personal information to play the basic game. If you add forms, accounts, analytics, cloud saves, or other services in a future version, update this policy before enabling them.</p>
-    <h3>2. Advertising and Third-Party Services</h3>
-    <p>The game may use Google AdMob to show advertisements. Google and its partners may process device identifiers, IP address, approximate location, app interactions, and other data as described in their own policies, subject to your device settings, consent choices, and applicable law.</p>
-    <p>Learn more: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">Google Privacy Policy</a> · <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer" style="color:var(--blue)">How Google uses information from apps</a>.</p>
-    <h3>3. How Information May Be Used</h3>
-    <ul><li>To provide and maintain game functionality.</li><li>To identify errors, prevent abuse, and improve performance.</li><li>To display and measure advertisements, where enabled and permitted.</li><li>To respond to support, privacy, or legal requests.</li></ul>
-    <h3>4. Sharing of Information</h3>
-    <p>We do not sell your personal information. Information may be processed by service providers that help operate the game, including advertising or diagnostic providers, or disclosed where required by law. Those providers may handle information under their own privacy terms.</p>
-    <h3>5. Data Retention and Security</h3>
-    <p>Information is retained only for as long as reasonably necessary for the purposes described in this policy or as required by law. Reasonable safeguards are used to protect information, but no method of electronic storage or transmission can be guaranteed completely secure.</p>
-    <h3>6. Children's Privacy</h3>
-    <p>The game is not intended to knowingly collect personal information directly from children. If you believe a child has provided personal information to the developer, contact us using the details below so the matter can be reviewed. Ensure the app's age rating, audience settings, ad settings, and actual practices comply with applicable requirements.</p>
-    <h3>7. Your Choices and Privacy Rights</h3>
-    <p>Depending on your location and applicable law, you may have rights to request access, correction, deletion, or other handling of your personal information. You may also be able to manage advertising or privacy settings through your device or relevant service provider.</p>
-    <h3>8. External Links</h3>
-    <p>The game or this page may link to third-party websites. We are not responsible for their content or privacy practices. Please review their policies before sharing information with them.</p>
-    <h3>9. Changes to This Privacy Policy</h3>
-    <p>This policy may be updated when the game, its services, or legal requirements change. The updated version and revision date will be posted on this page.</p>
-    <div class="notice">Important: Before publishing, verify every statement above against the exact SDKs, permissions, advertising setup, and data practices in your app. Remove anything that does not apply and add any data practices that are missing.</div>
-  </section>
+      <section class="card" id="privacy">
+        <h2>🔒 Privacy Policy</h2>
+        <p>
+          This Privacy Policy explains how
+          <strong>Tower House Builder</strong> may collect, use, and share
+          information when you use the game.
+        </p>
+        <h3>1. Information We Collect</h3>
+        <p>
+          The game may process limited information needed to operate, maintain,
+          secure, and improve the game. Depending on the features and services
+          enabled in your version, this may include device information, app
+          version, diagnostic data, gameplay-related information, and
+          advertising identifiers or related information processed by
+          advertising partners.
+        </p>
+        <p>
+          We do not ask you to provide sensitive personal information to play
+          the basic game. If you add forms, accounts, analytics, cloud saves, or
+          other services in a future version, update this policy before enabling
+          them.
+        </p>
+        <h3>2. Advertising and Third-Party Services</h3>
+        <p>
+          The game may use Google AdMob to show advertisements. Google and its
+          partners may process device identifiers, IP address, approximate
+          location, app interactions, and other data as described in their own
+          policies, subject to your device settings, consent choices, and
+          applicable law.
+        </p>
+        <p>
+          Learn more:
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: var(--blue)"
+            >Google Privacy Policy</a
+          >
+          ·
+          <a
+            href="https://support.google.com/admob/answer/6128543"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: var(--blue)"
+            >How Google uses information from apps</a
+          >.
+        </p>
+        <h3>3. How Information May Be Used</h3>
+        <ul>
+          <li>To provide and maintain game functionality.</li>
+          <li>To identify errors, prevent abuse, and improve performance.</li>
+          <li>
+            To display and measure advertisements, where enabled and permitted.
+          </li>
+          <li>To respond to support, privacy, or legal requests.</li>
+        </ul>
+        <h3>4. Sharing of Information</h3>
+        <p>
+          We do not sell your personal information. Information may be processed
+          by service providers that help operate the game, including advertising
+          or diagnostic providers, or disclosed where required by law. Those
+          providers may handle information under their own privacy terms.
+        </p>
+        <h3>5. Data Retention and Security</h3>
+        <p>
+          Information is retained only for as long as reasonably necessary for
+          the purposes described in this policy or as required by law.
+          Reasonable safeguards are used to protect information, but no method
+          of electronic storage or transmission can be guaranteed completely
+          secure.
+        </p>
+        <h3>6. Children's Privacy</h3>
+        <p>
+          The game is not intended to knowingly collect personal information
+          directly from children. If you believe a child has provided personal
+          information to the developer, contact us using the details below so
+          the matter can be reviewed. Ensure the app's age rating, audience
+          settings, ad settings, and actual practices comply with applicable
+          requirements.
+        </p>
+        <h3>7. Your Choices and Privacy Rights</h3>
+        <p>
+          Depending on your location and applicable law, you may have rights to
+          request access, correction, deletion, or other handling of your
+          personal information. You may also be able to manage advertising or
+          privacy settings through your device or relevant service provider.
+        </p>
+        <h3>8. External Links</h3>
+        <p>
+          The game or this page may link to third-party websites. We are not
+          responsible for their content or privacy practices. Please review
+          their policies before sharing information with them.
+        </p>
+        <h3>9. Changes to This Privacy Policy</h3>
+        <p>
+          This policy may be updated when the game, its services, or legal
+          requirements change. The updated version and revision date will be
+          posted on this page.
+        </p>
+      </section>
 
-  <section class="card" id="contact">
-    <h2>✉ Contact &amp; Grievance</h2>
-    <p>For questions about these Terms of Use, this Privacy Policy, or privacy-related requests, contact the developer using the details below.</p>
-    <div class="contact">
-      <div><strong>Developer Name:</strong> TOMAR JI </div>
-      <div><strong>Developer Email:</strong> <a href="mailto:developer@example.com">tomarji1904@gmail.com</a></div>
-      <div><strong>Grievance Email:</strong> <a href="mailto:grievance@example.com">tomarji1904@gmail.com</a></div>
-    </div>
-    <p>Please replace the developer name and both email placeholders before publishing. Also replace developer@example.com and grievance@example.com in the mailto links with the same real email addresses, so tapping either email opens the visitor’s email app with a new message addressed to you.</p>
-  </section>
-</main>
-<footer>Built with <strong>❤️ by Tomarji Game's Cares</strong></footer>
-<script>
-function goBack(){
-  if(window.history.length > 1){ window.history.back(); }
-  else { window.location.href = 'index.html'; }
-}
-</script>
-</body>
+      <section class="card" id="contact">
+        <h2>✉ Contact &amp; Grievance</h2>
+        <p>
+          For questions about these Terms of Use, this Privacy Policy, or
+          privacy-related requests, contact the developer using the details
+          below.
+        </p>
+        <div class="contact">
+          <div><strong>Developer Name:</strong>TOMAR JI</div>
+          <div>
+            <strong>Developer Email:</strong>
+            <a
+              href="mailto:developer@example.com?subject=Tower%20House%20Builder%20-%20Support%20Request&amp;body=Hello%20Tower%20House%20Builder%20Team%2C%0A%0A"
+              >tomarji1904@gmail.com</a
+            >
+          </div>
+          <div>
+            <strong>Grievance Email:</strong>
+            <a
+              href="mailto:grievance@example.com?subject=Tower%20House%20Builder%20-%20Grievance&amp;body=Hello%2C%0A%0AI%20would%20like%20to%20raise%20the%20following%20grievance%3A%0A%0A"
+              >tomarji1904@gmail.com</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>Built with <strong>❤️ by Tomarji Game Cares</strong></footer>
+    <script>
+      function goBack() {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = "index.html";
+        }
+      }
+    </script>
+  </body>
 </html>
